@@ -25,3 +25,19 @@ main {
 A {
     text-decoration: none;
 }
+a:link {
+    color: aqua;
+    text-decoration: double;
+}
+a:visited {
+    color: pink;
+    text-decoration: dotted;
+}
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+a:active {
+    color: black;
+    opacity: 0.3;
+}

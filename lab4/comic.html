@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Баранова Софья Сергеевна. Комикс.</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        .small{
+            width: 100px;
+            height: 70px;
+            background-color: azure;
+            position: absolute;
+            border: 1px solid black;
+            border-radius: 50%;
+            left: 650px;
+            top: 300px;
+            box-shadow: 5px 5px black;
+            opacity: 0;
+            transition: 1s;
+        }
+        .med{
+            width: 145px;
+            height: 90px;
+            background-color: azure;
+            position: absolute;
+            border: 1px solid black;
+            border-radius: 50%;
+            left: 700px;
+            top: 270px;
+            box-shadow: 5px 5px black;
+            opacity: 0;
+            transition: 2s;
+        }
+        .big{
+            width: 170px;
+            height: 130px;
+            background-color: azure;
+            position: absolute;
+            border: 1px solid black;
+            border-radius: 50%;
+            left: 770px;
+            top: 200px;
+            box-shadow: 5px 5px black;
+            opacity: 0;
+            transition: 3s;
+        }
+        .verybig{
+            width: 300px;
+            height: 150px;
+            background-color: azure;
+            position: absolute;
+            border: 1px solid black;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 130px;
+            color: rgb(207, 49, 207);
+            font-size: 30px;
+            left: 800px;
+            top: 150px;
+            box-shadow: 5px 5px black;
+            opacity: 0;
+            transition: 5s;
+        }
+        .pepa:hover .small, .pepa:hover .med, .pepa:hover .big, .pepa:hover .verybig {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+        <hr>
+    </header>
+
+    <main>
+        <div class="pepa">
+            <img src="pepa.jpeg" height="700px">
+            <div class="small"> </div>
+            <div class="med"> </div>
+            <div class="big"> </div>
+            <div class="verybig">я люблю элджея</div>
+        </div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy;Софья Баранова, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>

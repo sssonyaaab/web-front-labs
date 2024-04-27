@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Баранова Софья Сергеевна. Корзина</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function raschet() {
+            let inputA = document.getElementById('numberApple');
+            let inputB = document.getElementById('numberPear');
+            let inputC = document.getElementById('numberOrange');
+            let inputD = document.getElementById('numberMelon');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let c = parseInt(inputC.value);
+            let d = parseInt(inputD.value);
+            let result = a * 100 + b * 80 + c * 150 + d * 300;
+            document.getElementById('Price').innerText = 'Общая цена: ' + result + ' руб.';
+        }
+        function ochist () {
+            document.getElementById('numberApple').value = 0;
+            document.getElementById('numberPear').value = 0;
+            document.getElementById('numberOrange').value = 0;
+            document.getElementById('numberMelon').value = 0;
+            document.getElementById('Price').innerText = ' ';
+        }
+    </script>
+    <style>
+        .product {
+            border: 1px solid;
+            border-radius: 1%;
+            width: 250px;
+            height: 300px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+        <hr>
+    </header>
+
+    <main>
+        <div class="product">
+            <h2>
+                Корзина товаров
+            </h2>
+            <div>
+                Яблоки (100р/шт):
+            </div>
+            <input type="number" id="numberApple" value="0" min="0" data-price="100" placeholder='сколько надо?'>
+            <div>
+                Груши (80р/шт):
+            </div>
+            <input type="number" id="numberPear" value="0" min="0" data-price="80" placeholder='сколько надо?'>
+            <div>
+                Апельсины (150р/шт):
+            </div>
+            <input type="number" id="numberOrange" value="0" min="0" data-price="150" placeholder='сколько надо?'>
+            <div>
+                Дыни (300р/шт):
+            </div>
+            <input type="number" id="numberMelon" value="0" min="0" data-price="300" placeholder='сколько надо?'>
+            <div>
+                <input type="button" value="Рассчитать" onclick="raschet()">
+                <input type="button" value="Очистить" onclick="ochist()">
+            </div>
+            <div id="Price"></div>
+        </div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy;Софья Баранова, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>

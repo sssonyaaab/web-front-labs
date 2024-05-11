@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Баранова Софья Сергеевна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        #products {
+            border: 1px solid black;
+            background-color: aliceblue;
+            width: 400px;
+        }
+    </style>
+    <script>
+        function calculate() {
+            let balance = parseFloat(document.getElementById('balance').value);
+            let inputA = document.getElementById('numberApple');
+            let inputB = document.getElementById('numberPear');
+            let inputC = document.getElementById('numberCuc');
+            let inputD = document.getElementById('numberPot');
+            let inputE = document.getElementById('numberAv');
+            let inputF = document.getElementById('numberBanan');
+            let inputG = document.getElementById('numberBlu');
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let c = parseInt(inputC.value);
+            let d = parseInt(inputD.value);
+            let e = parseInt(inputE.value);
+            let f = parseInt(inputF.value);
+            let g = parseInt(inputG.value);
+            let result = a * 100 + b * 150 + c * 200 + d * 80 + e * 120 + f * 180 + g * 90;
+
+            if (isNaN(a) && isNaN(b) && isNaN(c) && isNaN(d) && isNaN(e) && isNaN(f) && isNaN(g)) {
+                document.getElementById('itog').innerText = 'Выберите хотя бы один товар';
+            } 
+            else if (a < 0 || b < 0 || c < 0 || d < 0 || e < 0 || f < 0 || g < 0) {
+                document.getElementById('itog').innerText = 'Количество товара не может быть отрицательным';
+            } 
+            else if (result > balance) {
+                document.getElementById('itog').innerText = 'У вас недостаточно денег!';
+            } 
+            else {
+                document.getElementById('itog').innerText = 'Итого: ' + result + ' руб';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+        <hr>
+    </header>
+
+    <main>
+        Мой баланс:
+        <input type="number" id="balance" min="0">
+        <div id="products">
+            <div class="product">
+                <span>Яблоко (100 рублей/шт):</span>
+                <input type="number" id="numberApple" class="quantity" data-price="100" min="0" value="0">
+            </div>
+            <div class="product">
+                <span>Груша (150 рублей/шт):</span>
+                <input type="number" id="numberPear" class="quantity" data-price="150" min="0" value="0">
+            </div>
+            <div class="product">
+                <span>Огурец (200 рублей/шт):</span>
+                <input type="number" id="numberCuc" class="quantity" data-price="200" min="0" value="0">
+            </div>
+            <div class="product">
+                <span>Картофель (80 рублей/шт):</span>
+                <input type="number" id="numberPot" class="quantity" data-price="80" min="0" value="0">
+            </div>
+            <div class="product">
+                <span>Авокадо (120 рублей/шт):</span>
+                <input type="number" id="numberAv" class="quantity" data-price="120" min="0" value="0">
+            </div>
+            <div class="product">
+                <span>Банан (180 рублей/шт):</span>
+                <input type="number" id="numberBanan" class="quantity" data-price="180" min="0" value="0">
+            </div>
+            <div class="product">
+                <span>Голубика (90 рублей/шт):</span>
+                <input type="number" id="numberBlu" class="quantity" data-price="90" min="0" value="0">
+            </div>
+        </div>
+        <button onclick="calculate()">ОК</button>
+        <div id="itog"></div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy;Софья Баранова, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>

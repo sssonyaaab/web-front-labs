@@ -16,6 +16,16 @@
             width: 500px;
             padding: 10px;
         }
+        #rules {
+            border: 1px solid black;
+            border-radius: 20px;
+            margin: 30px auto;
+            text-align: left;
+            display: none;
+            background-color: azure;
+            width: 500px;
+            padding: 10px;
+        }
     </style>
     <script>
         let number;
@@ -61,6 +71,16 @@
             count = 0;
             document.getElementById('result').textContent = '';
         }
+        function showRules() {
+            document.getElementById('rules').style.display = 'block';
+            document.getElementById('show').style.display = 'none';
+            document.getElementById('hide').style.display = 'block';
+        }
+        function hideRules() {
+            document.getElementById('rules').style.display = 'none';
+            document.getElementById('show').style.display = 'block';
+            document.getElementById('hide').style.display = 'none';
+        }
     </script>
 </head>
 <body>
@@ -70,11 +90,15 @@
     </header>
 
     <main>
-        <div class="game">
-            <button onclick="startGame()">
+        <div>
+            <div class="game">
+                <button onclick="startGame()">
                 Сыграть в игру
-            </button>
+                </button>
+            </div>
+            
         </div>
+        
         <div class="game" style="display: none;">
             <h1>Угадай число!</h1>
             <div>
@@ -84,6 +108,7 @@
                 <div id="result"></div>
             </div>
         </div>
+
         <div class="game" style="display: none;">
             <h1>Поздравляем, вы выиграли!</h1>
             <div>
@@ -96,6 +121,21 @@
                 <button onclick="again()">Сыграть еще раз</button>
             </div>
         </div>
+        <div>
+            <button id="show" onclick="showRules()">Показать правила игры</button>
+            <button id="hide" style="display: none;" onclick="hideRules()">Скрыть правила игры</button>
+            <div id="rules">
+                <h2>Правила игры:</h2>
+                <ol type="I">
+                    <li>Нажмите на кнопку "Сыграть в игру"</li>
+                    <li>Выберите число в диапазоне от 1 до 100</li>
+                    <li>Вы увидите подсказку - загаданное число больше или меньше вашего числа</li>
+                    <li>После отгадывания числа увидите количество ваших попыток</li>
+                    <li>Можете начать угадывать новое число, нажав на кнопку "Сыграть еще раз"</li>
+                </ol>
+            </div>
+        </div>
+        
     </main>
 
     <footer>

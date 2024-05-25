@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Баранова Софья Сергеевна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function getWeather() {
+            const url = "https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok";
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
+    
+                    const timee = data.hourly.time;
+                    const temperaturee = data.hourly.temperature_2m;
+    
+                    const weatherElement = document.getElementById('weather');
+                    weatherElement.innerHTML = '';
+    
+                    const targetHours = [8, 12, 20];
+                    targetHours.forEach(function(hour) {
+                        const temperature = getTemperature(hour, timee, temperaturee);
+                        const temperatureString = temperature !== null ? `${temperature} °C` : 'Нет данных';
+                        weatherElement.innerHTML += `<p>Температура в ${hour}:00: <b>${temperatureString}</b></p>`;
+                    });
+                })
+        }
+        function getTemperature(hour, timee, temperaturee) {
+            for (let i = 0; i < timee.length; i++) {
+                const time = new Date(timee[i]);
+                if (time.getHours() === hour) {
+                    return temperaturee[i];
+                }
+            }
+            return null; 
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+        <hr>
+    </header>
+
+    <main>
+        <button class="button" onclick="getWeather()">Получить погоду</button>
+        <div id="weather"></div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy;Софья Баранова, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>

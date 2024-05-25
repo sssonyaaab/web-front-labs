@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Баранова Софья Сергеевна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function showKurs() {
+            const dates = [
+                '2024-05-07', '2024-05-08', '2024-05-10', '2024-05-13', '2024-05-14',
+                '2024-05-15', '2024-05-16', '2024-05-17', '2024-05-20', '2024-05-21'
+            ];
+            const prices = [
+                107.52, 107.46, 106.24, 106.78, 108.30, 108.00, 109.88, 111.12, 112.96, 112
+            ];
+
+            let table = document.getElementById('kurs-table');
+            let sum = 0;
+            let max = 0;
+            let min = 1000;
+            for(let i = 0; i < prices.length; i++) {
+                let tr = document.createElement('tr');
+                let date = document.createElement('td');
+                date.innerText = dates[i];
+                let price = document.createElement('td');
+                price.innerText = prices[i];
+                let dif = document.createElement('td');
+                sum += prices[i];
+                if (i > 0) {
+                    let diff = prices[i] - prices[i - 1];
+                    dif.textContent = diff.toFixed(2);
+                    if (prices[i]>max) {
+                        max = prices[i]
+                    }
+                    if (prices[i]<min) {
+                        min = prices[i]
+                    }
+                }
+                let average = sum / prices.length;
+                average = average.toFixed(2);
+                document.getElementById('detail').innerHTML = `
+                    <p>Cреднее значение стоимости акции: ${average}</p>
+                    <p>Максимальное значение стоимости акции: ${max}</p>
+                    Минимальное значение стоимости акции: ${min}
+                `
+                tr.appendChild(date);
+                tr.appendChild(price);
+                tr.appendChild(dif);
+                table.appendChild(tr);
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+        <hr>
+    </header>
+
+    <main>
+        <button onclick="showKurs()">Курс акций «Ренессанс Страхование»</button>
+        <table border="1" id="kurs-table"></table>
+        <div id="detail"></div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy;Софья Баранова, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>

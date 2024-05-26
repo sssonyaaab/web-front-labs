@@ -3,21 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Баранова Софья Сергеевна. Лабораторная 8</title>
+    <title>Баранова Софья Сергеевна. Число дней с даты рождения</title>
     <link rel="stylesheet" href="../main.css">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-32x32.png">
+    <script src="time.js"></script>
+    <style>
+        #time {
+            font-size: 16px;
+            text-align: right;
+            margin: 10px;
+        }
+        #sec {
+            font-size: 70px;
+            color: black;
+            text-align: center;
+        }
+    </style>
 </head>
-<body>
+<body onload="showTime()">
     <header>
         НГТУ, ФБ, Лабораторная работа 8
-        <hr>
+        <div id="time">00:00:00</div>
     </header>
 
     <main>
-        <a href="date.html">Дата</a>
-        <a href="get-days-count.html">Число дней с даты рождения</a>
-        <a href="time.html">Число дней с даты рождения</a>
+        <div id="sec"></div>
     </main>
 
     <footer>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Баранова Софья Сергеевна. Число дней с даты рождения</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script src="get-days-count.js"></script>
+    <style>
+        input, button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+        <hr>
+    </header>
+
+    <main>
+        <div>
+            <label style="color: black;">Дата рождения: <input type="date"></label>
+        </div>
+        <div>
+            <button onclick="showDaysCount()">Показать число дней</button>
+            <button class="clear" onclick="clearDate()">Очистить</button>
+            <div id="result"></div>
+        </div>
+    </main>
+
+    <footer>
+        <hr>
+        &copy;Софья Баранова, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>

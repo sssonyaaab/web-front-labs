@@ -19,6 +19,15 @@
             color: black;
             text-align: center;
         }
+        #clock {
+            position: absolute;
+            left: 50%;
+            width: 5px;
+            height: 90px;
+            background-color: red;
+            top: 200px;
+            transition: transform 0.5s ease-in-out;
+        }
     </style>
 </head>
 <body onload="showTime()">
@@ -29,6 +38,7 @@
 
     <main>
         <div id="sec"></div>
+        <div id="clock"></div>
     </main>
 
     <footer>

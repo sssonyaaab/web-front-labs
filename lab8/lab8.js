@@ -17,3 +17,20 @@ function showDate() {
     out.style.color = 'black';
     out.style.margin = '10px';
 }
+function getDayOfWeek() {
+    let day = parseInt(document.getElementById('day').value);
+    let month = parseInt(document.getElementById('month').value) - 1; 
+    let year = parseInt(document.getElementById('year').value);
+
+    if (isNaN(day) || isNaN(month) || isNaN(year)) {
+        alert('Пожалуйста, введите корректную дату');
+        return;
+    }
+    
+    let date = new Date(year, month, day);
+    const weekDays = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+    let dayOfWeek = weekDays[date.getDay()];
+
+    document.getElementById('result').innerText = `День недели: ${dayOfWeek}`;
+    document.getElementById('result').style.color = 'black';
+}

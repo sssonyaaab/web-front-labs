@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс валют | АО ИК "ИНДЕВОР ФИНАНС"</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="favicon_0.ico" type="image/x-icon">
+    <link rel="icon" href="favicon_0.png">
+    <script src="rgz.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png">
+        </div>
+        <nav>
+            <a href="company.html">О КОМПАНИИ</a>
+            <a href="news.html">НОВОСТИ</a>
+            <a href="currency.html">КУРС ВАЛЮТ</a>
+            <a href="contact.html">КОНТАКТНЫЕ ДАННЫЕ</a>
+            <a href="video.html">ВИДЕО</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="compan">
+            <h1>КУРС ВАЛЮТ И КАЛЬКУЛЯТОР</h1>
+            <div class="img5">
+                <img src="2666413.png" style="float: right; margin-right: 100px; width: 300px;">
+            </div>
+            <div class="currency">
+                <h3>Актуальный курс валют</h3>
+                <p id="nok">NOK: <span>Загрузка...</span></p>
+            </div>
+            <div class="currency">
+                <h3>Калькулятор</h3>
+                <p>Рубли в норвежскую крону:</p>
+                <input type="number" id="rub-nok" placeholder="Введите количество рублей">
+                <button onclick="convertCurrency('rub-nok', 'nok-result', nokRate)">Конвертировать</button>
+                <p id="nok-result"></p>
+                <p>Норвежскую крону в рубли:</p>
+                <input type="number" id="nok-rub" placeholder="Введите количество долларов">
+                <button onclick="convertCurrency('nok-rub', 'rub-result', 1/nokRate)">Конвертировать</button>
+                <p id="rub-result"></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="logof">
+            <img src="logowhite.png">
+        </div>
+        <div class="foot">
+            <p>Портал Банка России «Финансовая культура» Fincult.info</p>
+            <p>Адрес:</p>
+            <p>111024, г. Москва, ул. Авиамоторная, дом 12,</p>
+            <p>6 (шестой) этаж, помещение XVII, комнаты 18,19</p>
+            <p>Тел.: 8 (495) 290-38-30</p>
+        </div>
+    </footer>
+</body>
+</html>
